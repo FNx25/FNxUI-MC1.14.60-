@@ -1,0 +1,611 @@
+{
+  "namespace": "start",
+
+
+  // Code By FarhanX
+  // Lastest Update June 13 2020
+  
+  "title_panel": {
+	"type": "panel",
+	"controls": [
+            {
+           "title_panel_content@common_art.start_title_panel_content": {
+		       "size": [ 300 , 300 ],
+		    	 "offset": [ 0 , 20 ],
+		       "anchor_from": "top_middle",
+		       "anchor_to": "top_middle"
+		      }
+        }
+	    ]
+    },	 
+	  
+	
+	"back_panel": {
+    "type": "image",
+    "texture": "textures/fnxcore/ax",
+	"color": [ 1.0 , 1.0, 1.0 ],
+	"size": [ 10000 , 10000 ],
+	"alpha": 0.65
+	},
+  
+  "play_buttonx": {
+    "type": "image",
+    "texture": "textures/ui/dialog_background_opaque",
+	"size": [ 100 , 150 ],
+	"alpha": 0.65,
+	"controls": [
+	    {
+    	"play_button@common_buttons.light_content_button": {
+		"$pressed_button_name": "button.menu_play",
+		"$button_content": "start.play_icon",
+		"size": [ 100 , 135 ],
+		"anchor_from": "top_middle",
+		"anchor_to": "top_middle"
+		}
+      },
+	    {
+	    "start@start.text_panel1": {
+	    }
+	  }
+	]
+  },
+  
+    "store_buttonx": {
+    "type": "image",
+    "texture": "textures/ui/dialog_background_opaque",
+	"size": [ 100 , 150 ],
+	"alpha": 0.65,
+	"controls": [
+	    {
+    	"play_button@common_buttons.light_content_button": {
+		"$pressed_button_name": "button.menu_store",
+		"$button_content": "start.store_icon",
+		"size": [ 100 , 135 ],
+		"anchor_from": "top_middle",
+		"anchor_to": "top_middle"
+		}
+      },
+	    {
+	    "start@start.text_panel2": {
+	    }
+	  }
+	]
+  },
+  
+    "achie_buttonx": {
+    "type": "image",
+    "texture": "textures/ui/dialog_background_opaque",
+	"size": [ 100 , 150 ],
+	"alpha": 0.65,
+	"controls": [
+	    {
+    	"play_button@common_buttons.light_content_button": {
+		"$button_content": "start.achievements_icon",
+		"$pressed_button_name": "button.menu_achievements",
+		"size": [ 100 , 135 ],
+		"anchor_from": "top_middle",
+		"anchor_to": "top_middle"
+		}
+      },
+	    {
+	    "start@start.text_panel3": {
+	    }
+	  }
+	]
+  },
+  
+    "sett_buttonx": {
+    "type": "image",
+    "texture": "textures/ui/dialog_background_opaque",
+	"size": [ 100 , 150 ],
+	"alpha": 0.65,
+	"controls": [
+	    {
+    	"play_button@common_buttons.light_content_button": {
+		"$pressed_button_name": "button.menu_settings",
+		"$button_content": "start.settings_icon",
+		"size": [ 100 , 135 ],
+		"anchor_from": "top_middle",
+		"anchor_to": "top_middle"
+		}
+      },
+	    {
+	    "start@start.text_panel4": {
+	    }
+	  }
+	]
+  },
+  
+  //---------------------------------------------------------------------------
+  // Online Buttons Panel (and the lang button)
+  //---------------------------------------------------------------------------
+
+  "edu_feedback_button@common_buttons.light_content_button": {
+    "size": [ 24, 24 ],
+    "$button_content": "start.feedback_icon",
+    "$pressed_button_name": "button.edu_feedback"
+  },
+
+  "release_feedback_button@common_buttons.hyperlink_content_button": {
+    "size": [ 24, 24 ],
+    "property_bag": {
+      "#hyperlink": "https://aka.ms/minecraftfb"
+    },
+    "$button_content": "start.feedback_icon"
+  },
+
+  "pre_release_feedback_button@start.release_feedback_button": {
+    "property_bag": {
+      "#hyperlink": "https://aka.ms/minecraftfbbeta"
+    }
+  },
+  
+    /// Button Profile , Skins , Feedback
+	
+    	"skins_button@common_buttons.light_content_button": {
+		"$button_content": "start.profile_icon",
+        "$pressed_button_name": "button.menu_skins",
+		"size": [ 24 , 24 ]
+	    },
+		
+    	"pr_button@common_buttons.light_content_button": {
+		"$button_content": "start.profile_icon",
+		"$pressed_button_name": "button.to_profile_screen",
+		"size": [ 24 , 24 ]
+	    },
+		
+    	"feedback_button@common_buttons.light_content_button": {
+		"$button_content": "start.feedback_icon",
+		"size": [ 24 , 24 ],
+        "controls": [
+         { "edu_feedback_button@start.edu_feedback_button": { "ignored": "(not $education_edition)" } },
+         { "release_feedback_button@start.release_feedback_button": { "ignored": "($pre_release or $education_edition)" } },
+         { "pre_release_feedback_button@start.pre_release_feedback_button": { "ignored": "(not $pre_release or $education_edition)" } }
+       ]
+	},
+		
+		
+  // Icon 
+  
+    "play_icon": {
+    "type": "image",
+    "texture": "textures/fnxcore/play",
+    "layer": 3,
+    "size": [ 45 , 45 ]
+  },
+  
+    "store_icon": {
+    "type": "image",
+    "texture": "textures/fnxcore/store",
+    "layer": 3,
+    "size": [ 45 , 45 ]
+  },
+  
+    "achievements_icon": {
+    "type": "image",
+    "texture": "textures/fnxcore/achie",
+    "layer": 3,
+    "size": [ 45 , 45 ]
+  },
+  
+    "settings_icon": {
+    "type": "image",
+    "texture": "textures/fnxcore/settings",
+    "layer": 3,
+    "size": [ 45 , 45 ]
+  },
+  
+    "exit_icon": {
+    "type": "image",
+    "texture": "textures/ui/Feedback",
+    "layer": 3,
+    "size": [ 16, 16 ]
+  },
+  
+    "feedback_icon": {
+    "type": "image",
+    "texture": "textures/ui/Feedback",
+    "layer": 3,
+    "size": [ 16, 16 ]
+  },
+  
+    "profile_icon": {
+    "type": "image",
+    "texture": "textures/fnxcore/profile",
+    "layer": 3,
+    "size": [ 10 , 10 ]
+  },
+  
+  
+  ////Text Button
+  
+    "play": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "Play",
+	"font_type": "MinecraftTen",
+	"offset": [ 0 , -3 ],
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle"
+  },
+
+    "store": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "Store",
+	"font_type": "MinecraftTen",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle"
+  },
+  
+    "achie": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "Achievements",
+	"font_type": "MinecraftTen",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle"
+  },
+  
+    "settings": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "Settings",
+	"font_type": "MinecraftTen",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle"
+  },
+
+  "text_panel1": {
+    "type": "panel",
+    "size": [ "100%-2px", 10 ],
+    "offset": [ 0, -2 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "play@start.play": {}
+      }
+    ]
+  },
+  
+   "text_panel2": {
+    "type": "panel",
+    "size": [ "100%-2px", 10 ],
+    "offset": [ 0, -2 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "store@start.store": {}
+      }
+    ]
+  },
+ 
+  "text_panel3": {
+    "type": "panel",
+    "size": [ "100%-2px", 10 ],
+    "offset": [ 0, -2 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "achie@start.achie": {}
+      }
+    ]
+  },
+  
+   "text_panel4": {
+    "type": "panel",
+    "size": [ "100%-2px", 10 ],
+    "offset": [ 0, -2 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "sett@start.settings": {}
+      }
+    ]
+  },
+  
+  ///Stack panel
+  
+   "button_panel": {
+   "type": "panel",
+   "controls": [
+           {
+	        "skins_button@start.skins_button": {
+			"anchor_from": "top_left",
+			"anchor_to": "top_left",
+			"offset": [ 5 , 5 ]
+	      }
+        },
+           {
+	        "p_button@start.pr_button": {
+			"anchor_from": "top_left",
+			"anchor_to": "top_left",
+			"offset": [ 33 , 5 ]
+	      }
+        },
+           {
+	        "feedback_button@start.feedback_button": {
+			"anchor_from": "top_left",
+			"anchor_to": "top_left",
+			"offset": [ 61 , 5 ]
+	      }
+        },
+          {
+	        "play_buttonx@start.play_buttonx": {
+			"anchor_from": "middle",
+			"anchor_to": "middle",
+			"offset": [ -180 , 30 ]
+	      }
+        },
+          {
+	        "store_buttonx@start.store_buttonx": {
+			"anchor_from": "middle",
+			"anchor_to": "middle",
+			"offset": [ -60 , 30 ]
+	      }
+        },
+          {
+	        "achie_buttonx@start.achie_buttonx": {
+			"anchor_from": "middle",
+			"anchor_to": "middle",
+			"offset": [ 60 , 30 ]
+	      }
+        },
+          {
+	        "sett_buttonx@start.sett_buttonx": {
+			"anchor_from": "middle",
+			"anchor_to": "middle",
+			"offset": [ 180 , 30 ]
+	      }
+        }
+      ]
+    },
+  
+
+  //Sisanya dari Mojang
+  //Versi Minecraft
+  //Development Version
+  //Copyright
+  
+  "feedback_icon": {
+    "type": "image",
+    "texture": "textures/ui/Feedback",
+    "layer": 3,
+    "size": [ 16, 16 ]
+  },
+
+  "Xbox_icon": {
+    "type": "image",
+    "texture": "textures/ui/xbox4",
+    "layer": 3,
+    "size": [ 27, 27 ]
+  },
+
+  "change_skin_icon": {
+    "type": "image",
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "texture": "textures/ui/hangar",
+    "layer": 3,
+    "size": [ 32, 16 ]
+  },
+
+  "new_offers_icon@common_store.new_offer_icon": {
+    "layer": 11, // This is the lowest layer where the button border won't show through this icon while being pressed
+    "anchor_from": "top_right",
+    "anchor_to": "top_right"
+  },
+
+  "update_prompt_icon": {
+    "type": "image",
+    "texture": "textures/ui/update",
+    "layer": 12, // This is the lowest layer where the button border won't show through this icon while being pressed
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [ 11, 21 ]
+  },
+
+  "marketplace_error_icon@common_store.marketplace_error_icon": {
+    "layer": 12,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+  "sale_ribbon_icon": {
+    "type": "image",
+    "texture": "textures/ui/saleribbon",
+    "layer": 12 // This is the lowest layer where the button border won't show through this icon while being pressed
+  },
+
+  "copyright": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "menu.copyright",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right"
+  },
+
+  "development_version": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "#development_version",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "bindings": [
+      {
+        "binding_name": "#development_version"
+      }
+    ]
+  },
+
+  "version": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "#version",
+    "size": [ "default", 10 ],
+    "offset": [ 0, -10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "bindings": [
+      {
+        "binding_name": "#version"
+      }
+    ]
+  },
+
+  "text_panel": {
+    "type": "panel",
+    "size": [ "100%-2px", 10 ],
+    "offset": [ 0, -1 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "copyright@start.copyright": {}
+      },
+      {
+        "development_version@start.development_version": {
+          "ignored": "$is_publish"
+        }
+      },
+      {
+        "version@start.version": {}
+      }
+    ]
+  },
+  
+  ////////Fnx Rexture
+  
+    "fnx_uie": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "Beta Un-Official",
+	"font_size": "large",
+    "size": [ 500 , 500 ],
+    "max_size":  [ 500 , 500 ],
+	"offset": [ 0 , -10 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  
+    "fnx_uiv": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "Last Update 16 June 2020",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "middle",
+    "anchor_to": "middle"
+  },
+
+  "fnx_uil": {
+    "type": "label",
+    "color": "$main_header_text_color",
+    "layer": 2,
+    "text": "FnxUI Version 3.1_3 Beta",
+    "size": [ "default", 10 ],
+    "offset": [ 0, -10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "middle",
+    "anchor_to": "middle"
+  },
+
+  "farhanxui": {
+    "type": "panel",
+    "size": [ "100%-2px", 10 ],
+    "offset": [ 0, -1 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "fnx_uii@start.fnx_uie": {}
+      },
+      {
+        "fnx_uiv@start.fnx_uiv": {}
+      },
+      {
+        "fnx_uil@start.fnx_uil": {}
+      }
+    ]
+  },
+  
+  "start_screen_content": {
+    "type": "panel",
+    "$achievements_ignored|default": false,
+    "$feedback_ignored|default": false,
+    "$store_ignored|default": false,
+    "variables": [
+      {
+        "requires": "$education_edition",
+        "$achievements_ignored": true,
+        "$store_ignored|default": true
+      },
+      {
+        "requires": "$gear_vr",
+        "$feedback_ignored": true
+      },
+      {
+        "requires": "$fire_tv",
+        "$feedback_ignored": true
+      },
+      {
+        "requires": "$nx_os",
+        "$feedback_ignored": true
+      },
+      {
+        "requires": "(not $supports_xbl_achievements)",
+        "$achievements_ignored": true,
+        "$feedback_ignored": true
+      }
+    ],
+    "controls": [
+	  {
+	    "back_panel@start.back_panel": { "layer": 2 }
+	  },
+	  {
+	    "button_panel@start.button_panel": {}
+	  },
+      {
+        "text_panel@start.text_panel": {}
+      },
+	  {
+	    "dark_panel@start.dark_panel": {}
+	  },
+	  {
+	    "title_panel@start.title_panel": {}
+	  },
+	  {
+	    "farhanxui@start.farhanxui": {}
+	  },
+	  {
+	    "farhanxui2@start.farhanxui2": {}
+	  }
+    ]
+  }
+}

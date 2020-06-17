@@ -1,23 +1,24 @@
-{
+﻿{
   "namespace": "start",
 
 
   // Code By FarhanX
+  // Gw males open source capek :v
   // Lastest Update June 13 2020
   
-  "title_panel": {
+    "title_panel": {
 	"type": "panel",
 	"controls": [
             {
-           "title_panel_content@common_art.start_title_panel_content": {
-		       "size": [ 300 , 300 ],
-		    	 "offset": [ 0 , 20 ],
-		       "anchor_from": "top_middle",
-		       "anchor_to": "top_middle"
-		      }
-        }
+             "title_panel_content@common_art.start_title_panel_content": {
+		     "size": [ 300 , 300 ],
+			 "offset": [ 0 , 20 ],
+		     "anchor_from": "top_middle",
+		     "anchor_to": "top_middle"
+		    }
+          }
 	    ]
-    },	 
+      },	 
 	  
 	
 	"back_panel": {
